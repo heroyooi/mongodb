@@ -112,15 +112,16 @@ mongo admin -u heroyooi -p qwer1234
 
 ## 몽구스 사용하기
 - MySQL에 시퀄라이즈가 있다면 몽고디비에는 몽구스가 있다.
-```command
-npm i -g express-generator
-express learn-mongoose --view=pug
-cd learn-mongoose
-npm i
-npm i mongoose
-```
 
-- schemas/index.js 생성 및 작성
-- schemas/user.js, comment.js 스키마 정의
-- views/mongoose.png 생성 및 쿼리 수행하기
-- public/mongoose.js 작성
+- learn-mongoose 폴더 생성
+```command
+npm init
+npm i express morgan nunjucks mongoose
+npm i -D nodemon
+npm start
+```
+- schemas/index.js 생성
+- app.js를 만들고 schemas/index.js와 연결
+- 스키마 정의: schemas/user.js, comment.js 생성
+- 라우터 작성: routes/index.js, users.js, comments.js
+- 위 명령어로 서버 실행

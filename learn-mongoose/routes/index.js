@@ -1,9 +1,17 @@
-var express = require('express');
-var router = express.Router();
+// https://thebook.io/080229/ch08/06/03-03/
+const express = require('express');
+const User = require('../schemas/user');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+const router = express.Router();
+
+router.get('/', async (req, res, next) => {
+  try {
+    const users = await User.find({});
+    res.render('mongoose', { users });
+  } catch (err) {
+    console.error(err);
+    next(err);
+  }
 });
 
 module.exports = router;
